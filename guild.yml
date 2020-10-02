@@ -1,0 +1,38 @@
+- model: sample-model
+  description: Multilayer Perceptron (MLP) for MNIST
+  operations:
+    train:
+      description: train sample model
+      main: train
+      flags-import: all
+      output-scalars: '(\key): (\value)'
+
+- model: mlp-mnist
+  description: Multilayer Perceptron (MLP) for MNIST
+  operations:
+    train:
+      description: Train MLP on MNIST
+      main: mnist_mlp
+      flags-dest: globals
+      flags:
+        epochs:
+          description: Number of epochs to train
+          default: 5
+        batch_size:
+          description: Size of each training batch
+          default: 128
+
+- model: cnn-mnist
+  description: Multilayer Perceptron (MLP) for MNIST
+  operations:
+    train:
+      description: Train a basic CNN on MNIST
+      main: mnist_cnn
+      flags-dest: globals
+      flags:
+        epochs:
+          description: Number of epochs to train
+          default: 2
+        batch_size:
+          description: Size of each training batch
+          default: 128
